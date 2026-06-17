@@ -1,6 +1,7 @@
 ﻿body 
 {
     direction:rtl;
+    background-color: red
 }
 nav ul {
     list-style-type: none; 
