@@ -1,4 +1,4 @@
-﻿body 
+﻿body
 {
     direction:rtl;
     margin: 0;
@@ -13,13 +13,13 @@ main {
     padding: 20px; /* זה יוצר מרווח פנימי לטקסט, כך שהוא לעולם לא ייחתך */
 }
 nav ul {
-    list-style-type: none; 
+    list-style-type: none;
     padding: 0;
     text-align: center;
     margin: 10.5px;
 }
 nav ul li {
-    display: inline-block; 
+    display: inline-block;
     margin: 0 auto;
 }
 nav ul li a {
@@ -38,4 +38,118 @@ nav ul li a {
     padding-right: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
+}
+body{
+    margin: 0;
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    background-color: #D9F8F3;
+    color: #000;
+    font-weight: bold;
+}
+
+#frame{
+    width: 800px;
+    margin: 0 auto;
+    background-color: #FFFEE8;
+    padding-bottom: 80px;
+}
+
+nav{
+    height: 82px;
+    background-color: #FFF9B8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    padding: 0 22px;
+    border-left: 2px solid black;
+}
+
+nav a:first-child{
+    border-left: none;
+}
+
+main{
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 145px;
+    text-align: right;
+}
+
+h1{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 45px;
+    color: #B678E5;
+    text-shadow: 1px 1px 0 white;
+}
+
+h1 span{
+    color: #C21C1C;
+}
+
+.intro{
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 55px;
+    text-align: right;
+}
+
+section{
+    margin-bottom: 55px;
+    text-align: right;
+}
+
+h2{
+    text-align: center;
+    font-size: 25px;
+    margin: 0 0 20px;
+}
+
+section p{
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 16px;
+    text-align: right;
+}
+
+.logos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin: 22px auto;
+    direction: ltr;
+    flex-wrap: wrap;
+}
+
+.logos span{
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.tip{
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: right;
+    margin-top: 16px;
+}
+
+ul{
+    width: fit-content;
+    margin: 12px 0 0 auto;
+    padding-right: 22px;
+    text-align: right;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+li{
+    margin-bottom: 2px;
 }
