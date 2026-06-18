@@ -4,13 +4,13 @@
 body {
     direction: rtl;
     font-family: Arial, sans-serif;
-    background-color: #fffde7; /* צהוב בהיר לרקע האתר */
+    background-color: #e9f7f5; 
 }
 
 #container {
     width: 800px;
     margin: 0 auto;
-    background-color: white; /* רקע לבן לקופסת התוכן */
+    background-color: #fffde7; 
     min-height: 100vh;
     padding-bottom: 40px;
 }
@@ -44,7 +44,7 @@ nav ul li:first-child a {
 /* --- פירורי לחם (ללא קווים) --- */
 .breadcrumbs {
     padding: 20px 40px;
-    background-color: white;
+    background-color: #fffde7;
 }
 
 .breadcrumbs ul {
