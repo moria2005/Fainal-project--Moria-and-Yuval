@@ -87,3 +87,91 @@ h1 {
 h1 span {
     color: #C21C1C;
 }
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* מרווח בין השורות */
+    width: 400px; /* רוחב הטופס */
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between; /* מרווח בין התווית לתיבה */
+    align-items: center;
+}
+
+.form-row label {
+    width: 120px; /* רוחב קבוע לתוויות - זה מה שיוצר את היישור! */
+    text-align: right;
+}
+
+.form-row input,
+.form-row textarea {
+    flex: 1; /* התיבות יתפסו את כל השטח הנותר */
+    padding: 8px;
+    border: 1px solid #ccc; /* גבול אפור עדין במקום אדום */
+    border-radius: 4px;
+}
+
+.button-row {
+    justify-content: flex-end; /* הכפתור יהיה בצד של התיבות */
+}
+
+button {
+    background-color: #4a148c;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+}
+h1 {
+    margin-top: 0;
+}
+.sitemap-container {
+    display: flex; /* מסדר את ה-sections בטורים */
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+    text-align: right; /* יישור לימין */
+}
+
+.sitemap-column {
+    flex: 1; /* כל טור תופס מקום שווה */
+}
+
+.sitemap-column h2 {
+    color: #4a148c;
+    font-size: 1.2em;
+    border-bottom: 2px solid #fdf59e;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.sitemap-column ul {
+    list-style-type: none; /* מסיר את הנקודות */
+    padding: 0;
+}
+
+.sitemap-column li {
+    margin-bottom: 10px;
+}
+
+.sitemap-column a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.sitemap-column a:hover {
+    color: #4a148c; /* אפקט צבע במעבר עכבר */
+    text-decoration: underline;
+}
+
+.disabled {
+    color: #999 !important;
+    cursor: not-allowed !important; /* זה מה שמציג את העיגול האדום */
+    pointer-events: none;          /* זה מה שמונע את הלחיצה */
+    text-decoration: none !important;
+    display: inline-block;
+}
