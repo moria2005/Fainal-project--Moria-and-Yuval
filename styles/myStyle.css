@@ -1,23 +1,33 @@
 ﻿/* --- הגדרות בסיס --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
 
 body {
     direction: rtl;
     font-family: Arial, sans-serif;
-    background-color: #e9f7f5; 
+    background-color: #e9f7f5;
+    display: flex;
+    flex-direction: column;
 }
 
 #container {
     width: 800px;
     margin: 0 auto;
-    background-color: #fffde7; 
-    min-height: 100vh;
+    background-color: #fffde7;
     padding-bottom: 40px;
+    flex: 1;
 }
 
 /* --- תפריט ראשי --- */
 nav {
-    background-color: #fdf59e; /* צהוב כהה לרצועת הניווט */
+    background-color: #fdf59e;
     padding: 20px 0;
     text-align: center;
 }
@@ -32,16 +42,15 @@ nav ul li a {
     color: black;
     text-decoration: none;
     padding: 0 15px;
-    border-right: 1px solid black; /* קו מימין לכל קישור */
+    border-right: 1px solid black;
     display: block;
 }
 
-/* ביטול הקו מהקישור האחרון (הכי שמאלי) */
 nav ul li:first-child a {
     border-right: none;
 }
 
-/* --- פירורי לחם (ללא קווים) --- */
+/* --- פירורי לחם --- */
 .breadcrumbs {
     padding: 20px 40px;
     background-color: #fffde7;
@@ -60,7 +69,7 @@ nav ul li:first-child a {
     text-decoration: none;
     color: #4a148c;
     font-weight: bold;
-    border: none !important; /* מבטיח שאין קווים כאן */
+    border: none !important;
 }
 
 .breadcrumbs ul li span {
@@ -74,48 +83,57 @@ main {
     text-align: right;
 }
 
-h2, h3 { color: #4a148c; margin: 20px 0; }
-li { margin-bottom: 10px; line-height: 1.6; }
+h2, h3 {
+    color: #4a148c;
+    margin: 20px 0;
+}
+
+li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
 h1 {
     text-align: center;
     font-size: 32px;
     margin: 40px 0;
-    color: #4a148c; /* צבע סגול תואם לשאר האתר */
+    color: #4a148c;
+    margin-top: 0;
 }
 
-/* אם תרצי להוסיף הדגשה למילה ספציפית בתוך ה-h1 */
 h1 span {
     color: #C21C1C;
 }
+
+/* --- טופס צור קשר --- */
 #contactForm {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* מרווח בין השורות */
-    width: 400px; /* רוחב הטופס */
+    gap: 15px;
+    width: 400px;
     margin: 0 auto;
 }
 
 .form-row {
     display: flex;
-    justify-content: space-between; /* מרווח בין התווית לתיבה */
+    justify-content: space-between;
     align-items: center;
 }
 
 .form-row label {
-    width: 120px; /* רוחב קבוע לתוויות - זה מה שיוצר את היישור! */
+    width: 120px;
     text-align: right;
 }
 
-.form-row input,
-.form-row textarea {
-    flex: 1; /* התיבות יתפסו את כל השטח הנותר */
+.form-row input, .form-row textarea {
+    flex: 1;
     padding: 8px;
-    border: 1px solid #ccc; /* גבול אפור עדין במקום אדום */
+    border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 .button-row {
-    justify-content: flex-end; /* הכפתור יהיה בצד של התיבות */
+    justify-content: flex-end;
 }
 
 button {
@@ -125,19 +143,18 @@ button {
     border: none;
     cursor: pointer;
 }
-h1 {
-    margin-top: 0;
-}
+
+/* --- מפת אתר --- */
 .sitemap-container {
-    display: flex; /* מסדר את ה-sections בטורים */
+    display: flex;
     justify-content: space-between;
     gap: 20px;
     margin-top: 30px;
-    text-align: right; /* יישור לימין */
+    text-align: right;
 }
 
 .sitemap-column {
-    flex: 1; /* כל טור תופס מקום שווה */
+    flex: 1;
 }
 
 .sitemap-column h2 {
@@ -149,7 +166,7 @@ h1 {
 }
 
 .sitemap-column ul {
-    list-style-type: none; /* מסיר את הנקודות */
+    list-style-type: none;
     padding: 0;
 }
 
@@ -164,14 +181,25 @@ h1 {
 }
 
 .sitemap-column a:hover {
-    color: #4a148c; /* אפקט צבע במעבר עכבר */
+    color: #4a148c;
     text-decoration: underline;
 }
 
 .disabled {
     color: #999 !important;
-    cursor: not-allowed !important; /* זה מה שמציג את העיגול האדום */
-    pointer-events: none;          /* זה מה שמונע את הלחיצה */
+    cursor: not-allowed !important;
+    pointer-events: none;
     text-decoration: none !important;
     display: inline-block;
+}
+
+/* --- פוטר --- */
+footer {
+    background-color: #e6c229;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    width: 800px;
+    border-top: 2px solid #b3971c;
+    margin:0 auto;
 }
