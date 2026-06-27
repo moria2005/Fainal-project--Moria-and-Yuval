@@ -162,9 +162,10 @@ button {
 /* --- מפת אתר --- */
 .sitemap-container {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;   /* במקום space-between, נשתמש ב-center */
+    gap: 40px;                 /* עכשיו ה-gap באמת יקבע את המרחק ביניהן */
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .sitemap-column h2 {
@@ -206,16 +207,32 @@ footer {
     margin-top: auto;
 }
 
+/* עיצוב ה-ul הראשי */
 .navbar {
-    display: flex;
-    align-items: center;    /* מיישר את הלוגו והטקסט לאותו גובה */
-    justify-content: flex-start; /* או center, כדי להחליט איפה התפריט מתחיל */
-    gap: 20px;              /* יוצר מרווח חיובי בין הלוגו לקישור הראשון */
-    padding: 10px;
+    display: flex;          /* מציב את הכל בשורה אחת */
+    align-items: center;    /* מיישר את הכל לאמצע הגובה */
+    list-style: none;       /* מסיר את הנקודות של הרשימה */
+    gap: 20px;              /* רווח אחיד בין הפריטים */
+    background-color: #fffacd;
+    padding: 10px 20px;
+    margin: 0;
 }
 
+/* עיצוב הלוגו */
 .nav-logo {
-    height: 40px;           /* גובה חיובי */
-    width: auto;            /* שומר על פרופורציות */
-    /* בלי position absolute ובלי שום ערך שלילי */
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* עיצוב הכותרת */
+.site-title {
+    margin-left: auto;      /* דוחף הכל שמאלה */
+    font-size: 18px;
+    font-weight: bold;
+    color: #3498db;         /* תכלת */
+    line-height: 1.2;       /* קובע את המרחק בין השורות - קטן מ-1.5 בשביל מראה "לוגו" */
+    text-align: center;     /* ממקם את המילים אחת מתחת לשנייה בצורה מאוזנת */
+    font-family: sans-serif;
+    padding: 0 10px;
 }
