@@ -205,3 +205,17 @@ footer {
     margin: 0 auto;
     margin-top: auto;
 }
+
+.navbar {
+    display: flex;
+    align-items: center;    /* מיישר את הלוגו והטקסט לאותו גובה */
+    justify-content: flex-start; /* או center, כדי להחליט איפה התפריט מתחיל */
+    gap: 20px;              /* יוצר מרווח חיובי בין הלוגו לקישור הראשון */
+    padding: 10px;
+}
+
+.nav-logo {
+    height: 40px;           /* גובה חיובי */
+    width: auto;            /* שומר על פרופורציות */
+    /* בלי position absolute ובלי שום ערך שלילי */
+}
