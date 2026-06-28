@@ -43,21 +43,26 @@ nav ul li {
     display: inline-block;
     float: right;
 }
-
 nav ul li a {
     display: block;
     color: black;
     text-decoration: none;
-    padding: 0 15px;
+    padding: 0 10px;        /* צמצמנו מעט מ-15px ל-10px */
     border-right: 1px solid black;
     height: 30px;
     line-height: 30px;
+    font-size: 14px;        /* הקטנו קצת כדי שהכל ייכנס בשורה */
 }
 
+/* 1. מסיר את הקו מהלוגו (האלמנט הראשון) */
 nav ul li:first-child a {
     border-right: none;
 }
 
+/* 2. מסיר את הקו מהקישור של "דף הבית" (האלמנט השני) */
+nav ul li:nth-child(2) a {
+    border-right: none;
+}
 /* אינטראקציה רק לתפריט הראשי */
 nav ul li a:hover {
     /* טקסט נשאר שחור */
@@ -227,28 +232,51 @@ footer {
 
 /* עיצוב הכותרת */
 .site-title {
-    margin-left: auto;      /* דוחף הכל שמאלה */
-    font-size: 18px;
+    margin-left: auto;
+    font-size: 14px;        /* הקטנה מ-18px ל-14px */
     font-weight: bold;
-    color: #3498db;         /* תכלת */
-    line-height: 1.2;       /* קובע את המרחק בין השורות - קטן מ-1.5 בשביל מראה "לוגו" */
-    text-align: center;     /* ממקם את המילים אחת מתחת לשנייה בצורה מאוזנת */
+    color: #3498db;
+    line-height: 1.1;
+    text-align: right;      /* בגלל שזה מימין, עדיף יישור לימין */
     font-family: sans-serif;
-    padding: 0 10px;
+    padding: 0 5px;         /* הקטנת הריווח בצדדים */
+    white-space: nowrap;    /* מונע מהטקסט לרדת שורה */
+    display: flex;          /* מאפשר לשלוט במיקום בקלות */
+    align-items: center;    /* ממקם אנכית מול שאר התפריט */
 }
 .hero {
     width: 90%;
     max-width: 1000px;
-    height: 280px;
+    height: auto;           /* שינוי מ-280px ל-auto */
     margin: 30px auto 10px;
     overflow: hidden;
     border-radius: 24px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    display: flex;          /* מוודא שהתמונה מתנהגת טוב בתוך ה-hero */
 }
+
 .hero img {
     width: 100%;
-    height: 100%;
-    object-fit: contain; /* לא חותך את התמונה */
-    background-color: #fffde7; /* צבע רקע כדי למלא רווחים אם יש */
+    height: auto;           /* התמונה תתאים את הגובה לרוחב */
+    display: block;
+}
+body {
+    direction:rtl;
+}
+img {
+    width: 100px;
+}
+.checkImg {
+    width: 90px;
+    opacity: 0.5;
+}
+.checkImgSelected {
+    width: 90px;
+    opacity: 1;
+}
+.hidden {
+    display: none;
+}
+.show {
     display: block;
 }

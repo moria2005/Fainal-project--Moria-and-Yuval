@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>המדריך לסטודנט | הסמסטר המושלם</title>
+    <meta name="description" content="בואו ניצור את הסמסטר המושלם" />
+    <meta name="keywords" content="סטודנטים, לימודים, תואר, הנחות, הטבות,סימסטר,מושלם, ניהול זמן" />
+    <meta name="author" content="Moria and Yuval" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="icon" type="image/jpeg" href="images/logo.png"/>
+
+    <link href="styles/myStyle.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="container">
+    <nav>
+        <ul>
+            <li><img src="images/logo.png" alt="לוגו האתר" class="nav-logo"></li>
+            <li><a href="index.html">דף הבית</a></li>
+            <li><a href="time-management.html">ניהול זמן</a></li>
+            <li><a href="discounts.html">הנחות והטבות</a></li>
+            <li><a href="perfectSemester.html">הסמסטר המושלם</a></li>
+            <li><a href="about.html">אודות</a></li>
+            <li><a href="contactUs.html">צור קשר</a></li>
+            <li><a href="siteMap.html">מפת האתר</a></li>
+            <li class="site-title">המדריך<br>לסטודנט</li>
+        </ul>
+    </nav>
+    <nav class="breadcrumbs">
+        <ul>
+            <li><a href="index.html">דף הבית</a></li>
+            <li><span>הסמסטר המושלם</span></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>הסמסטר המושלם</h1>
+
+        <form>
+
+            <label for="txtName">שם הסטודנט:<br/>
+                <input type="text" id="txtName" placeholder="הכנס את שמך">
+            </label>
+            <br/><br/>
+            <label for="txtName">גיל הסטודנט:<br/>
+                <input type="text" id="age" placeholder="הכנס את גילך">
+            </label>
+
+            <br/>
+
+            <h3>כמה זמן פנוי יש לך?</h3>
+
+            <label for="little">
+                <input type="radio" id="little" name="freeTime"/>מעט
+            </label>
+
+            <label for="medium">
+                <input type="radio" id="medium" name="freeTime"/>בינוני
+            </label>
+
+            <label for="lot">
+                <input type="radio" id="lot" name="freeTime"/>הרבה
+            </label>
+
+            <img id="green" src="images/green.png" class="hidden"/>
+            <img id="yellow" src="images/yellow.png" class="hidden"/>
+            <img id="red" src="images/red.png" class="hidden"/>
+            <br/><br/>
+
+            <h3>מה המטרה העיקרית שלך?</h3>
+
+            <label for="grades">
+                <input type="radio" id="grades" name="goal"/>ציונים גבוהים
+            </label>
+
+            <label for="balance">
+                <input type="radio" id="balance" name="goal"/>איזון
+            </label>
+
+            <label for="career">
+                <input type="radio" id="career" name="goal"/>בניית קריירה
+            </label>
+
+            <img id="gradesImg" src="images/grades.png" class="hidden"/>
+            <img id="balanceImg" src="images/balance.png" class="hidden"/>
+            <img id="careerImg" src="images/career.png" class="hidden"/>
+
+            <br/><br/>
+
+            <h3>אילו קשיים יש לך?</h3>
+
+            <label for="stress">
+                <input type="checkbox" id="stress"/>לחץ במבחנים
+            </label>
+
+            <label for="timeManagement">
+                <input type="checkbox" id="timeManagement"/>ניהול זמן
+            </label>
+
+            <label for="motivation">
+                <input type="checkbox" id="motivation"/>חוסר מוטיבציה
+            </label>
+
+            <label for="procrastination">
+                <input type="checkbox" id="procrastination"/>דחיינות
+            </label>
+
+            <img id="stressImg" src="images/stress.png" class="checkImg">
+            <img id="timeImg" src="images/time.png" class="checkImg">
+            <img id="motivationImg" src="images/motivation.png" class="checkImg">
+            <img id="delayImg" src="images/delay.png" class="checkImg">
+
+            <br/><br/>
+
+            <h3>אילו כלים מעניינים אותך?</h3>
+
+            <label for="ai">
+                <input type="checkbox" id="ai"/>איי-איי
+            </label>
+
+            <label for="canva">
+                <input type="checkbox" id="canva"/>קאנבה
+            </label>
+
+            <label for="notion">
+                <input type="checkbox" id="notion"/>נושן
+            </label>
+
+            <label for="linkedin">
+                <input type="checkbox" id="linkedin"/>לינקדין
+            </label>
+
+            <img id="linkedinImg" src="images/linkedin.png" class="checkImg"/>
+            <img id="notionImg" src="images/notion.png" class="checkImg"/>
+            <img id="canvaImg" src="images/canva.png" class="checkImg"/>
+            <img id="aiImg" src="images/ai.png" class="checkImg"/>
+
+            <br><br>
+
+            <input type="button" value="בנה לי תוכנית מותאמת אישית" onclick="BuildPlan()">
+            <div id="summaryBox"></div>
+        </form>
+    </main>
+</div>
+</body>
+<footer>
+    <p>© 2026 המדריך לסטודנט - כל הזכויות שמורות</p>
+    <div class="footer-container">
+        <div class="footer-message">
+            <p><strong>טיפ לסמסטר:</strong> יום אחד של למידה מרוכזת שווה יותר משלושה ימים של גרירת רגליים. בהצלחה! </p>
+        </div>
+
+        <div class="footer-info">
+            <p>המדריך נבנה ע"י מוריה ויובל | המידע מתעדכן בהתאם לפרסומי אגודות הסטודנטים.</p>
+        </div>
+    </div>
+</footer>
+</html>
