@@ -107,45 +107,25 @@ document.getElementById("career").addEventListener("click", function() {
 });
 
 
+
 function showCheckboxImage(checkId, imageId) {
-    if(document.getElementById(checkId).checked)
-    {
-        document.getElementById(imageId).className = "checkImgSelected";
-    }
-    else {
-        document.getElementById(imageId).className = "checkImg";
+    let checkBox = document.getElementById(checkId);
+    let img = document.getElementById(imageId);
+
+
+    if (checkBox.checked) {
+        img.className = "show";
+    } else {
+        img.className = "hidden";
     }
 }
 
-document.getElementById("stress").addEventListener("click", function() {
-    showCheckboxImage("stress", "stressImg");
-});
+document.getElementById("stress").addEventListener("click", () => showCheckboxImage("stress", "stressImg"));
+document.getElementById("timeManagement").addEventListener("click", () => showCheckboxImage("timeManagement", "timeImg"));
+document.getElementById("motivation").addEventListener("click", () => showCheckboxImage("motivation", "motivationImg"));
+document.getElementById("procrastination").addEventListener("click", () => showCheckboxImage("procrastination", "delayImg"));
 
-document.getElementById("timeManagement").addEventListener("click", function() {
-    showCheckboxImage("timeManagement", "timeImg");
-});
-
-document.getElementById("motivation").addEventListener("click", function() {
-    showCheckboxImage("motivation", "motivationImg");
-});
-
-document.getElementById("procrastination").addEventListener("click", function() {
-    showCheckboxImage("procrastination", "delayImg");
-});
-
-
-document.getElementById("linkedin").addEventListener("click", function() {
-    showCheckboxImage("linkedin", "linkedinImg");
-});
-
-document.getElementById("notion").addEventListener("click", function() {
-    showCheckboxImage("notion", "notionImg");
-});
-
-document.getElementById("canva").addEventListener("click", function() {
-    showCheckboxImage("canva", "canvaImg");
-});
-
-document.getElementById("ai").addEventListener("click", function() {
-    showCheckboxImage("ai", "aiImg");
-});
+document.getElementById("linkedin").addEventListener("click", () => showCheckboxImage("linkedin", "linkedinImg"));
+document.getElementById("notion").addEventListener("click", () => showCheckboxImage("notion", "notionImg"));
+document.getElementById("canva").addEventListener("click", () => showCheckboxImage("canva", "canvaImg"));
+document.getElementById("ai").addEventListener("click", () => showCheckboxImage("ai", "aiImg"));

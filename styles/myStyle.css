@@ -1,4 +1,4 @@
-﻿/* --- הגדרות בסיס --- */
+﻿
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +25,7 @@ body {
     flex: 1;
 }
 
-/* --- תפריט ראשי --- */
+
 nav {
     background-color: #fdf59e;
     padding: 20px 0;
@@ -47,31 +47,29 @@ nav ul li a {
     display: block;
     color: black;
     text-decoration: none;
-    padding: 0 10px;        /* צמצמנו מעט מ-15px ל-10px */
+    padding: 0 10px;      
     border-right: 1px solid black;
     height: 30px;
     line-height: 30px;
-    font-size: 14px;        /* הקטנו קצת כדי שהכל ייכנס בשורה */
+    font-size: 14px;     
 }
 
-/* 1. מסיר את הקו מהלוגו (האלמנט הראשון) */
+
 nav ul li:first-child a {
     border-right: none;
 }
 
-/* 2. מסיר את הקו מהקישור של "דף הבית" (האלמנט השני) */
+
 nav ul li:nth-child(2) a {
     border-right: none;
 }
-/* אינטראקציה רק לתפריט הראשי */
+
 nav ul li a:hover {
-    /* טקסט נשאר שחור */
+
     color: black;
-    /* רקע חום שקפקף - השתמשתי ב-rgba כדי לשלוט בשקיפות */
     background-color: rgba(74, 20, 140, 0.2);
 }
 
-/* --- פירורי לחם: עיצוב מבודד ללא float וללא hover של התפריט --- */
 .breadcrumbs {
     padding: 20px 40px;
     background-color: #fffde7;
@@ -84,24 +82,22 @@ nav ul li a:hover {
 }
 
 .breadcrumbs ul li {
-    display: inline; /* זה מונע מהחץ לרדת שורה */
-    float: none;     /* ביטול ה-float של התפריט */
+    display: inline;
+    float: none;
 }
 
 .breadcrumbs ul li a {
     text-decoration: none;
     color: #4a148c;
     font-weight: bold;
-    display: inline; /* ביטול ה-block של התפריט */
+    display: inline;
 }
 
-/* ביטול ה-hover של התפריט בפירורי לחם */
 .breadcrumbs ul li a:hover {
     background-color: transparent;
     text-decoration: underline;
 }
 
-/* הוספת החץ */
 .breadcrumbs ul li:not(:last-child):after {
     content: " > ";
     color: #000;
@@ -109,7 +105,7 @@ nav ul li a:hover {
     display: inline;
 }
 
-/* --- תוכן האתר --- */
+
 main {
     padding: 20px 40px;
     text-align: right;
@@ -130,7 +126,7 @@ h1 span {
     color: #C21C1C;
 }
 
-/* --- טופס צור קשר --- */
+
 #contactForm {
     display: flex;
     flex-direction: column;
@@ -164,11 +160,10 @@ button {
     cursor: pointer;
 }
 
-/* --- מפת אתר --- */
 .sitemap-container {
     display: flex;
-    justify-content: center;   /* במקום space-between, נשתמש ב-center */
-    gap: 40px;                 /* עכשיו ה-gap באמת יקבע את המרחק ביניהן */
+    justify-content: center;   
+    gap: 40px;              
     margin-top: 30px;
     margin-bottom: 50px;
 }
@@ -193,14 +188,14 @@ button {
     text-decoration: underline;
 }
 
-/* קישור מושבת ללא important */
+
 nav .disabled, .sitemap-column .disabled {
     color: #999;
     cursor: not-allowed;
     pointer-events: none;
 }
 
-/* --- פוטר --- */
+
 footer {
     background-color: #e6c229;
     color: #000000;
@@ -212,71 +207,73 @@ footer {
     margin-top: auto;
 }
 
-/* עיצוב ה-ul הראשי */
+
 .navbar {
-    display: flex;          /* מציב את הכל בשורה אחת */
-    align-items: center;    /* מיישר את הכל לאמצע הגובה */
-    list-style: none;       /* מסיר את הנקודות של הרשימה */
-    gap: 20px;              /* רווח אחיד בין הפריטים */
+    display: flex;        
+    align-items: center;    
+    list-style: none;      
+    gap: 20px;             
     background-color: #fffacd;
     padding: 10px 20px;
     margin: 0;
 }
 
-/* עיצוב הלוגו */
+
 .nav-logo {
     height: 40px;
     width: auto;
     display: block;
 }
 
-/* עיצוב הכותרת */
+
 .site-title {
     margin-left: auto;
-    font-size: 14px;        /* הקטנה מ-18px ל-14px */
+    font-size: 14px;     
     font-weight: bold;
     color: #3498db;
     line-height: 1.1;
-    text-align: right;      /* בגלל שזה מימין, עדיף יישור לימין */
+    text-align: right;     
     font-family: sans-serif;
-    padding: 0 5px;         /* הקטנת הריווח בצדדים */
-    white-space: nowrap;    /* מונע מהטקסט לרדת שורה */
-    display: flex;          /* מאפשר לשלוט במיקום בקלות */
-    align-items: center;    /* ממקם אנכית מול שאר התפריט */
+    padding: 0 5px;         
+    white-space: nowrap; 
+    display: flex;          
+    align-items: center;   
 }
 .hero {
     width: 90%;
     max-width: 1000px;
-    height: auto;           /* שינוי מ-280px ל-auto */
+    height: auto;         
     margin: 30px auto 10px;
     overflow: hidden;
     border-radius: 24px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    display: flex;          /* מוודא שהתמונה מתנהגת טוב בתוך ה-hero */
+    display: flex;         
 }
 
 .hero img {
     width: 100%;
-    height: auto;           /* התמונה תתאים את הגובה לרוחב */
+    height: auto;           
     display: block;
 }
-body {
-    direction:rtl;
-}
-img {
-    width: 100px;
-}
-.checkImg {
+
+main form img {
     width: 90px;
-    opacity: 0.5;
+    height: auto;
+    display: none; 
+    margin: 10px 0;
 }
-.checkImgSelected {
-    width: 90px;
-    opacity: 1;
+
+main form img.show {
+    display: block;
+}
+
+
+main form img.hidden {
+    display: none;
 }
 .hidden {
     display: none;
 }
 .show {
     display: block;
-}
+} 

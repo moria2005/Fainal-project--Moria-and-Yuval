@@ -10,6 +10,7 @@
     <link rel="icon" type="image/jpeg" href="images/logo.png"/>
 
     <link href="styles/myStyle.css" rel="stylesheet" />
+   
 </head>
 <body>
 
@@ -43,7 +44,7 @@
             </label>
             <br/><br/>
             <label for="txtName">גיל הסטודנט:<br/>
-                <input type="text" id="age" placeholder="הכנס את גילך">
+                <input type="number" id="age" placeholder="הכנס את גילך">
             </label>
 
             <br/>
@@ -62,9 +63,9 @@
                 <input type="radio" id="lot" name="freeTime"/>הרבה
             </label>
 
-            <img id="green" src="images/green.png" class="hidden"/>
-            <img id="yellow" src="images/yellow.png" class="hidden"/>
-            <img id="red" src="images/red.png" class="hidden"/>
+            <img id="green" src="images/green.png" class="hidden" alt="low"/>
+            <img id="yellow" src="images/yellow.png" class="hidden" alt="medium"/>
+            <img id="red" src="images/red.png" class="hidden" alt="high"/>
             <br/><br/>
 
             <h3>מה המטרה העיקרית שלך?</h3>
@@ -81,9 +82,9 @@
                 <input type="radio" id="career" name="goal"/>בניית קריירה
             </label>
 
-            <img id="gradesImg" src="images/grades.png" class="hidden"/>
-            <img id="balanceImg" src="images/balance.png" class="hidden"/>
-            <img id="careerImg" src="images/career.png" class="hidden"/>
+            <img id="gradesImg" src="images/grades.png" class="hidden" alt="ציונים גהוהים"/>
+            <img id="balanceImg" src="images/balance.png" class="hidden" alt="איזון"/>
+            <img id="careerImg" src="images/career.png" class="hidden" alt="קריירה"/>
 
             <br/><br/>
 
@@ -105,10 +106,10 @@
                 <input type="checkbox" id="procrastination"/>דחיינות
             </label>
 
-            <img id="stressImg" src="images/stress.png" class="checkImg">
-            <img id="timeImg" src="images/time.png" class="checkImg">
-            <img id="motivationImg" src="images/motivation.png" class="checkImg">
-            <img id="delayImg" src="images/delay.png" class="checkImg">
+            <img id="stressImg" src="images/stress.png" class="hidden checkImg" alt="לחץ">
+            <img id="timeImg" src="images/time.png" class="hidden checkImg" alt="זמן">
+            <img id="motivationImg" src="images/motivation.png" class="hidden checkImg" alt="מוטיבציה">
+            <img id="delayImg" src="images/delay.png" class="hidden checkImg" alt="דחיינות">
 
             <br/><br/>
 
@@ -130,10 +131,10 @@
                 <input type="checkbox" id="linkedin"/>לינקדין
             </label>
 
-            <img id="linkedinImg" src="images/linkedin.png" class="checkImg"/>
-            <img id="notionImg" src="images/notion.png" class="checkImg"/>
-            <img id="canvaImg" src="images/canva.png" class="checkImg"/>
-            <img id="aiImg" src="images/ai.png" class="checkImg"/>
+            <img id="linkedinImg" src="images/linkedin.png" class="hidden checkImg" alt="linkedin"/>
+            <img id="notionImg" src="images/notion.png" class="hidden checkImg" alt="notion"/>
+            <img id="canvaImg" src="images/canva.png" class="hidden checkImg" alt="canva"/>
+            <img id="aiImg" src="images/ai.png" class="hidden checkImg" alt="ai"/>
 
             <br><br>
 
@@ -154,5 +155,6 @@
         </div>
     </div>
 </footer>
+<script src="jScripts/JavaScript.js" type="text/javascript">  </script>
 </body>
 </html>
