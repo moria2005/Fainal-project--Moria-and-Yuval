@@ -1,131 +1,129 @@
-﻿function BuildPlan() {
-    let text = "<h3>סיכום הבחירות שלך:</h3>";
-    text += "שם: " + document.getElementById("txtName").value + "<br>";
-    text += "גיל: " + document.getElementById("age").value + "<br><br>";
+﻿// 1. הגדרת המערכים
+let radioGoals = ["grades", "balance", "career"];
+let radioGoalImages = ["gradesImg", "balanceImg", "careerImg"];
+let timeOptions = ["little", "medium", "lot"];
+let timeImages = ["green", "yellow", "red"];
+let checkboxes = ["stress", "timeManagement", "motivation", "procrastination", "linkedin", "notion", "canva", "ai"];
+let checkboxImages = ["stressImg", "timeImg", "motivationImg", "delayImg", "linkedinImg", "notionImg", "canvaImg", "aiImg"];
 
-    if(document.getElementById("little").checked) {
-        text += "זמן פנוי: מעט<br>";
-        text += "המלצה: התחילי ממשימות קצרות של 20 דקות ביום.<br><br>";
-    }
+const difficulties = [
+    { id: "stress", text: "לחץ במבחנים - תרגלי מבחנים בתנאי זמן. טיפ: השתמשי בטכניקת פומודורו." },
+    { id: "timeManagement", text: "ניהול זמן - השתמשי ביומן שבועי. טיפ: תכנני את השבוע במוצאי שבת." },
+    { id: "motivation", text: "חוסר מוטיבציה - חלקי משימות גדולות למשימות קטנות. טיפ: פרגני לעצמך הפסקה כיפית אחרי כל משימה." },
+    { id: "procrastination", text: "דחיינות - התחילי ממשימה אחת קטנה של 10 דקות. טיפ: אל תחשבי על הסוף, רק על ההתחלה." }
+];
 
-    if(document.getElementById("medium").checked) {
-        text += "זמן פנוי: בינוני<br>";
-        text += "המלצה: קבעי 3-4 שעות שבועיות ללמידה מסודרת.<br><br>";
-    }
+const tools = [
+    { id: "linkedin", text: "LinkedIn - מומלץ להתחיל לבנות פרופיל מקצועי ולעדכן פרויקטים." },
+    { id: "notion", text: "Notion - מומלץ לארגן משימות, קורסים ומטרות במקום אחד." },
+    { id: "canva", text: "Canva - מומלץ ליצור מצגות ותוצרים מעוצבים לתיק העבודות." },
+    { id: "ai", text: "AI - מומלץ להשתמש בכלי בינה מלאכותית לייעול הלמידה והיצירתיות." }
+];
 
-    if(document.getElementById("lot").checked) {
-        text += "זמן פנוי: הרבה<br>";
-        text += "המלצה: נצלי את הזמן גם לבניית תיק עבודות וכלים חדשים.<br><br>";
-    }
-
-    if(document.getElementById("grades").checked) {
-        text += "מטרה: ציונים גבוהים<br>";
-        text += "המלצה: הכיני לוח זמנים לקראת מבחנים.<br><br>";
-    }
-
-    if(document.getElementById("balance").checked) {
-        text += "מטרה: איזון<br>";
-        text += "המלצה: שלבי זמן מנוחה קבוע לצד הלימודים.<br><br>";
-    }
-
-    if(document.getElementById("career").checked) {
-        text += "מטרה: בניית קריירה<br>";
-        text += "המלצה: התחילי לבנות תיק עבודות ופרופיל LinkedIn.<br><br>";
-    }
-
-    text += "<b>קשיים שסימנת:</b><br>";
-
-    if(document.getElementById("stress").checked) {
-        text += "לחץ במבחנים - תרגלי מבחנים בתנאי זמן.<br>";
-    }
-
-    if(document.getElementById("timeManagement").checked) {
-        text += "ניהול זמן - השתמשי ביומן שבועי.<br>";
-    }
-
-    if(document.getElementById("motivation").checked) {
-        text += "חוסר מוטיבציה - חלקי משימות גדולות למשימות קטנות.<br>";
-    }
-
-    if(document.getElementById("procrastination").checked) {
-        text += "דחיינות - התחילי ממשימה אחת קטנה של 10 דקות.<br>";
-    }
-
-    text += "<br><b>כלים שמעניינים אותך:</b><br>";
-
-    if(document.getElementById("linkedin").checked) {
-        text += "LinkedIn - מומלץ להתחיל לבנות פרופיל מקצועי ולעדכן פרויקטים.<br>";
-    }
-
-    if(document.getElementById("notion").checked) {
-        text += "Notion - מומלץ לארגן משימות, קורסים ומטרות במקום אחד.<br>";
-    }
-
-    if(document.getElementById("canva").checked) {
-        text += "Canva - מומלץ ליצור מצגות ותוצרים מעוצבים לתיק העבודות.<br>";
-    }
-
-    if(document.getElementById("ai").checked) {
-        text += "AI - מומלץ להשתמש בכלי בינה מלאכותית לייעול הלמידה והיצירתיות.<br>";
-    }
-
-    document.getElementById("summaryBox").innerHTML = text;
-}
-
-
-function showSelectedImage(imagesList, selectedImage) {
-    for(let i=0; i<imagesList.length; i++) {
+// 2. פונקציות עזר
+function showImage(imagesList, selectedImageId) {
+    for (let i = 0; i < imagesList.length; i++) {
         document.getElementById(imagesList[i]).className = "hidden";
     }
-    document.getElementById(selectedImage).className = "show";
+    document.getElementById(selectedImageId).className = "show";
 }
 
+function closeBox() {
+    document.getElementById("summaryBox").style.display = "none";
+}
 
-document.getElementById("little").addEventListener("click", function() {
-    showSelectedImage(["green", "yellow", "red"], "green");
-});
+// 3. פונקציית בדיקת תקינות
+function checkFormCompletion() {
+    let name = document.getElementById("txtName").value;
+    let age = document.getElementById("age").value;
 
-document.getElementById("medium").addEventListener("click", function() {
-    showSelectedImage(["green", "yellow", "red"], "yellow");
-});
+    // בדיקה האם נבחרה מטרה (רדיו - מטרות)
+    let goalSelected = false;
+    for(let i = 0; i < radioGoals.length; i++) {
+        if(document.getElementById(radioGoals[i]).checked) goalSelected = true;
+    }
 
-document.getElementById("lot").addEventListener("click", function() {
-    showSelectedImage(["green", "yellow", "red"], "red");
-});
+    // בדיקה האם נבחר זמן (רדיו - זמן פנוי)
+    let timeSelected = false;
+    for(let i = 0; i < timeOptions.length; i++) {
+        if(document.getElementById(timeOptions[i]).checked) timeSelected = true;
+    }
 
+    let btn = document.getElementById("btnBuild");
 
-document.getElementById("grades").addEventListener("click", function() {
-    showSelectedImage(["gradesImg", "balanceImg", "careerImg"], "gradesImg");
-});
-
-document.getElementById("balance").addEventListener("click", function() {
-    showSelectedImage(["gradesImg", "balanceImg", "careerImg"], "balanceImg");
-});
-
-document.getElementById("career").addEventListener("click", function() {
-    showSelectedImage(["gradesImg", "balanceImg", "careerImg"], "careerImg");
-});
-
-
-
-function showCheckboxImage(checkId, imageId) {
-    let checkBox = document.getElementById(checkId);
-    let img = document.getElementById(imageId);
-
-
-    if (checkBox.checked) {
-        img.className = "show";
+    // הכפתור יהיה זמין רק אם שם, גיל, מטרה וזמן מלאו. צ'קבוקסים לא נדרשים.
+    if (name !== "" && age !== "" && goalSelected && timeSelected) {
+        btn.disabled = false;
     } else {
-        img.className = "hidden";
+        btn.disabled = true;
     }
 }
 
-document.getElementById("stress").addEventListener("click", () => showCheckboxImage("stress", "stressImg"));
-document.getElementById("timeManagement").addEventListener("click", () => showCheckboxImage("timeManagement", "timeImg"));
-document.getElementById("motivation").addEventListener("click", () => showCheckboxImage("motivation", "motivationImg"));
-document.getElementById("procrastination").addEventListener("click", () => showCheckboxImage("procrastination", "delayImg"));
+// 4. פונקציית הסיכום (כאן נמצא כל התוכן!)
+function BuildPlan() {
+    let name = document.getElementById("txtName").value;
+    let age = document.getElementById("age").value;
 
-document.getElementById("linkedin").addEventListener("click", () => showCheckboxImage("linkedin", "linkedinImg"));
-document.getElementById("notion").addEventListener("click", () => showCheckboxImage("notion", "notionImg"));
-document.getElementById("canva").addEventListener("click", () => showCheckboxImage("canva", "canvaImg"));
-document.getElementById("ai").addEventListener("click", () => showCheckboxImage("ai", "aiImg"));
+    let text = "<h3>סיכום הבחירות שלך:</h3>";
+    text += "<b>שם:</b> " + name + " | <b>גיל:</b> " + age + "<br><br>";
+
+    // רדיו זמן
+    text += "<b>זמן פנוי:</b> ";
+    if (document.getElementById("little").checked) text += "מעט - המלצה: התחילי ממשימות קצרות.<br>";
+    else if (document.getElementById("medium").checked) text += "בינוני - המלצה: קבעי 3-4 שעות שבועיות.<br>";
+    else if (document.getElementById("lot").checked) text += "הרבה - המלצה: נצלי את הזמן לבניית תיק עבודות.<br>";
+
+    // רדיו מטרה
+    text += "<b>מטרה עיקרית:</b> ";
+    if (document.getElementById("grades").checked) text += "ציונים גבוהים - המלצה: הכיני לוח זמנים למבחנים.<br>";
+    else if (document.getElementById("balance").checked) text += "איזון - המלצה: שלבי זמן מנוחה קבוע.<br>";
+    else if (document.getElementById("career").checked) text += "בניית קריירה - המלצה: התחילי לבנות פרופיל LinkedIn.<br>";
+
+    // קשיים
+    text += "<br><b>קשיים שסימנת:</b><br>";
+    for (let i = 0; i < difficulties.length; i++) {
+        if (document.getElementById(difficulties[i].id).checked) {
+            text += "<div>• " + difficulties[i].text + "</div>";
+        }
+    }
+
+    // כלים
+    text += "<br><b>כלים שמעניינים אותך:</b><br>";
+    for (let j = 0; j < tools.length; j++) {
+        if (document.getElementById(tools[j].id).checked) {
+            text += "<div>• " + tools[j].text + "</div>";
+        }
+    }
+
+    text += "<button onclick='closeBox()' style='width:100%; margin-top:15px; cursor:pointer;'>סגור</button>";
+    document.getElementById("summaryBox").innerHTML = text;
+    document.getElementById("summaryBox").style.display = "block";
+}
+
+// 5. חיבור הכל
+window.onload = function() {
+    document.getElementById("btnBuild").onclick = BuildPlan;
+    document.getElementById("btnBuild").disabled = true;
+
+    document.getElementById("txtName").oninput = checkFormCompletion;
+    document.getElementById("age").oninput = checkFormCompletion;
+
+    for (let i = 0; i < radioGoals.length; i++) {
+        document.getElementById(radioGoals[i]).onclick = function() {
+            showImage(radioGoalImages, radioGoalImages[i]);
+            checkFormCompletion();
+        };
+    }
+    for (let i = 0; i < timeOptions.length; i++) {
+        document.getElementById(timeOptions[i]).onclick = function() {
+            showImage(timeImages, timeImages[i]);
+            checkFormCompletion();
+        };
+    }
+    for (let j = 0; j < checkboxes.length; j++) {
+        document.getElementById(checkboxes[j]).onclick = function() {
+            if (document.getElementById(checkboxes[j]).checked) document.getElementById(checkboxImages[j]).className = "show";
+            else document.getElementById(checkboxImages[j]).className = "hidden";
+        };
+    }
+};

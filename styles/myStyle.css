@@ -1,5 +1,4 @@
-﻿
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -47,11 +46,11 @@ nav ul li a {
     display: block;
     color: black;
     text-decoration: none;
-    padding: 0 10px;      
+    padding: 0 10px;
     border-right: 1px solid black;
     height: 30px;
     line-height: 30px;
-    font-size: 14px;     
+    font-size: 14px;
 }
 
 
@@ -162,8 +161,8 @@ button {
 
 .sitemap-container {
     display: flex;
-    justify-content: center;   
-    gap: 40px;              
+    justify-content: center;
+    gap: 40px;
     margin-top: 30px;
     margin-bottom: 50px;
 }
@@ -209,10 +208,10 @@ footer {
 
 
 .navbar {
-    display: flex;        
-    align-items: center;    
-    list-style: none;      
-    gap: 20px;             
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
     background-color: #fffacd;
     padding: 10px 20px;
     margin: 0;
@@ -228,52 +227,90 @@ footer {
 
 .site-title {
     margin-left: auto;
-    font-size: 14px;     
+    font-size: 14px;
     font-weight: bold;
     color: #3498db;
     line-height: 1.1;
-    text-align: right;     
+    text-align: right;
     font-family: sans-serif;
-    padding: 0 5px;         
-    white-space: nowrap; 
-    display: flex;          
-    align-items: center;   
+    padding: 0 5px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
 }
 .hero {
     width: 90%;
     max-width: 1000px;
-    height: auto;         
+    height: auto;
     margin: 30px auto 10px;
     overflow: hidden;
     border-radius: 24px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    display: flex;         
+    display: flex;
 }
 
 .hero img {
     width: 100%;
-    height: auto;           
+    height: auto;
     display: block;
 }
 
+
+
+/* כל התמונות בתוך הטופס יתחילו בגודל קבוע ומוסתרות */
 main form img {
-    width: 90px;
-    height: auto;
-    display: none; 
+    width: 90px;   /* כאן אנחנו קובעים את הגודל הקבוע */
+    height: auto;  /* שומר על פרופורציות */
+    display: none; /* מסתיר אותן כברירת מחדל */
     margin: 10px 0;
 }
 
+/* הקלאס שיציג את התמונה */
 main form img.show {
-    display: block;
+    display: block; /* מציג את התמונה */
 }
 
-
+/* הקלאס שיסתיר את התמונה */
 main form img.hidden {
-    display: none;
+    display: none; /* מוודא הסתרה */
 }
-.hidden {
-    display: none;
+#summaryBox {
+    display: none; /* נשאר מוסתר בהתחלה */
+
+    /* מיקום צף מעל הכל */
+    position: fixed;
+
+    /* הגדרת גודל */
+    width: 320px;
+    height: fit-content;
+
+    /* מרכוז בעזרת Grid - נקי וללא ערכים שליליים */
+    inset: 0;
+    margin: auto;
+
+    /* עיצוב */
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid #ddd;
+    z-index: 9999;
+
+    /* טקסט */
+    text-align: right;
+    direction: rtl;
+    line-height: 1.5;
 }
-.show {
-    display: block;
-} 
+/* עיצוב כפתור מושבת */
+#btnBuild:disabled {
+    opacity: 0.5;
+    cursor: not-allowed; /* הסמן ישתנה לאיקס קטן */
+    background-color: #999; /* צבע אפור מושבת */
+}
+
+/* עיצוב כפתור פעיל */
+#btnBuild {
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 0.3s; /* אפקט מעבר חלק */
+}
